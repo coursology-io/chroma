@@ -400,18 +400,18 @@ export const serializeEmbeddingFunction = ({
  */
 export const getDefaultEFConfig =
   async (): Promise<EmbeddingFunctionConfiguration> => {
-    try {
-      const { DefaultEmbeddingFunction } = await import(
-        "@chroma-core/default-embed"
-      );
-      if (!knownEmbeddingFunctions.has(new DefaultEmbeddingFunction().name)) {
-        registerEmbeddingFunction("default", DefaultEmbeddingFunction);
-      }
-    } catch (e) {
-      console.warn(
-        "Cannot instantiate a collection with the DefaultEmbeddingFunction. Please install @chroma-core/default-embed, or provide a different embedding function",
-      );
-    }
+    // try {
+    //   const { DefaultEmbeddingFunction } = await import(
+    //     "@chroma-core/default-embed"
+    //   );
+    //   if (!knownEmbeddingFunctions.has(new DefaultEmbeddingFunction().name)) {
+    //     registerEmbeddingFunction("default", DefaultEmbeddingFunction);
+    //   }
+    // } catch (e) {
+    //   console.warn(
+    //     "Cannot instantiate a collection with the DefaultEmbeddingFunction. Please install @chroma-core/default-embed, or provide a different embedding function",
+    //   );
+    // }
     return {
       name: "default",
       type: "known",
